@@ -9,11 +9,7 @@ class HomePage extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-              child: CircleAvatar(
-                foregroundImage: NetworkImage(
-                  'https://lh3.googleusercontent.com/ogw/ADGmqu9P_gWKNfuN9zn90FR2QD7klCkd9p5EOkW_e42B=s32-c-mo',
-                ),
-              ),
+              child: CircleAvatar(),
               height: 100,
               width: double.infinity,
               color: Colors.blue,
@@ -49,7 +45,12 @@ class HomePage extends StatelessWidget {
       title: Text('$text'),
       trailing: Icon(icono),
       onTap: () {
-        Navigator.pushNamed(context, ruta);
+        String rutaActual = ModalRoute.of(context).settings.name;
+        if (rutaActual == 'homePage' && ruta == 'homePage') {
+          Navigator.pop(context);
+        } else {
+          Navigator.pushNamed(context, ruta);
+        }
       },
     );
   }
