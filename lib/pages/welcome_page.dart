@@ -26,6 +26,7 @@ class WellcomePage extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
+                    Image(image: AssetImage('assets/PastedGraphic-3.png'))
                   ],
                 ),
               ),

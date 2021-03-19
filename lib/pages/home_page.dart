@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilerna_app/globals.dart' as globals;
 
 class HomePage extends StatelessWidget {
   @override
@@ -30,11 +31,13 @@ class HomePage extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: Text('Material App Bar'),
+        title: Text('HomePage'),
       ),
       body: Center(
         child: Container(
-          child: Text('Main page'),
+          child: Text(globals.isAdmin
+              ? 'Bienvenido administrador'
+              : 'Bienvenido Invitado'),
         ),
       ),
     );
