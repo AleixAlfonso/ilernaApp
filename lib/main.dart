@@ -3,7 +3,6 @@ import 'package:ilerna_app/pages/login_page.dart';
 import 'package:ilerna_app/pages/welcome_page.dart';
 
 import 'pages/home_page.dart';
-import 'pages/home_page.dart';
 
 void main() => runApp(MyApp());
 
