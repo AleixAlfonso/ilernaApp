@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:ilerna_app/data/autenticationService.dart';
 import 'package:ilerna_app/data/colors.dart' as colors;
+import 'package:provider/provider.dart';
 
-class LoginPAge extends StatefulWidget {
+class LoginPAge extends StatelessWidget {
   @override
-  _LoginPAgeState createState() => _LoginPAgeState();
-}
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passController = TextEditingController();
 
-class _LoginPAgeState extends State<LoginPAge> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -56,15 +58,24 @@ class _LoginPAgeState extends State<LoginPAge> {
                   SizedBox(
                     height: 60.0,
                   ),
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(colors.main)),
-                      onPressed: () {},
-                      child: Text(
-                        'Entrar',
-                        style: TextStyle(fontSize: 24.0),
-                      ))
+                  Provider(
+                    create: (BuildContext context) {
+                      context.read<AuthenticationService>().authStateChanges;
+                    },
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(colors.main)),
+                        onPressed: () {
+                          context.read<AuthenticationService>().signIn(
+                              email: emailController.text.trim(),
+                              password: passController.text.trim());
+                        },
+                        child: Text(
+                          'Entrar',
+                          style: TextStyle(fontSize: 24.0),
+                        )),
+                  )
                 ],
               ),
             ),
@@ -76,6 +87,7 @@ class _LoginPAgeState extends State<LoginPAge> {
 
   Widget createTextField(String label) {
     return TextField(
+      controller: emailController,
       decoration: InputDecoration(
         border: OutlineInputBorder(),
         labelText: '$label',
@@ -85,6 +97,7 @@ class _LoginPAgeState extends State<LoginPAge> {
 
   Widget createPassword() {
     return TextField(
+      controller: passController,
       decoration: InputDecoration(
         border: OutlineInputBorder(),
         labelText: 'Contraseña',

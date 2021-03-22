@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "819306968736",
+    "project_id": "ilernaapp-5e1c7",
+    "storage_bucket": "ilernaapp-5e1c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819306968736:android:6d92e9c4a69f6822cb7bc5",
+        "android_client_info": {
+          "package_name": "com.aleix.IlernaApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819306968736-npinjts5eojf41kumbfikua6g1leqrbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRoaV17GEPIil0xJb3MtQxtJXqbGtpn2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819306968736-npinjts5eojf41kumbfikua6g1leqrbv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
